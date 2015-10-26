@@ -4,15 +4,13 @@ module.exports = function(options) {
   var superagent = require("superagent");
   var _ = require('lodash');
   var Request = superagent.Request;
-  var ACTIONS = ['GET', 'DELETE', 'HEAD', 'PATCH', 'POST', 'PUT'];
+  var ACTIONS = ['GET', 'POST', 'DELETE', 'PUT'];
   var HEADERS = (options.headers && options.headers.base) ? options.headers.base : {};
   var GET_HEADERS = (options.headers && options.headers.get) ? options.headers.get : {};
   var POST_HEADERS = (options.headers && options.headers.post) ? options.headers.post : {};
   var DELETE_HEADERS = (options.headers && options.headers.del) ? options.headers.del : {};
   var PUT_HEADERS = (options.headers && options.headers.put) ? options.headers.put : {};
 
-  // Create custom error type.
-  // Create a new object, that prototypally inherits from the Error constructor.
   var SuperagentPromiseError = superagent.SuperagentPromiseError = function (message) {
     this.name = 'SuperagentPromiseError';
     this.message = message || 'Bad request';
@@ -20,18 +18,6 @@ module.exports = function(options) {
 
   SuperagentPromiseError.prototype = new Error();
   SuperagentPromiseError.prototype.constructor = SuperagentPromiseError;
-
-  /**
-   * @namespace utils
-   * @class Superagent
-   *
-   * Add promise support for superagent/supertest
-   *
-   * Call .promise() to return promise for the request
-   *
-   * @method then
-   * @return {Bluebird.Promise}
-   */
   Request.prototype.promise = function() {
     var req = this;
     var error;
@@ -58,18 +44,6 @@ module.exports = function(options) {
         throw err;
       });
   };
-
-  /**
-   *
-   * Make superagent requests Promises/A+ conformant
-   *
-   * Call .then([onFulfilled], [onRejected]) to register callbacks
-   *
-   * @method then
-   * @param {function} [onFulfilled]
-   * @param {function} [onRejected]
-   * @return {Bluebird.Promise}
-   */
   Request.prototype.then = function() {
     var promise = this.promise();
     return promise.then.apply(promise, arguments);

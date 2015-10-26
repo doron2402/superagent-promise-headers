@@ -34,7 +34,7 @@ describe('OT-SuperAgent-Promise', function(){
 			request.get('localhost:' + 9987 + '/good')
 			.then(function(res){
 				expect(res.req._header).to.contains(BASE_HEADER['service-type']);
-				expect(res.req._header).to.contains(GET_HEADER['type']);
+				expect(res.req._header).to.contains(GET_HEADER.type);
 				expect(res).to.exist;
         expect(res.status).to.equal(200);
         expect(res.body.code).to.equal('ok');
@@ -50,7 +50,7 @@ describe('OT-SuperAgent-Promise', function(){
 			request.post('localhost:' + 9987 + '/good')
 			.then(function(res){
 				expect(res.req._header).to.contains(BASE_HEADER['service-type']);
-				expect(res.req._header).to.contains(POST_HEADER['type']);
+				expect(res.req._header).to.contains(POST_HEADER.type);
 				expect(res).to.exist;
         expect(res.status).to.equal(200);
         expect(res.body.code).to.equal('ok');
