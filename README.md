@@ -1,1 +1,3 @@
-# ot-superagent-promise
+# superagent-promise-headers
+====================================
+SuperAgent Bluebird promises - header extension
