@@ -1,0 +1,40 @@
+{
+  "name": "superagent-promise-headers",
+  "version": "1.0.0",
+  "description": "SuperAgent Bluebird promises - header extension ",
+  "main": "index.js",
+  "scripts": {
+    "test-watch": "NODE_ENV=test node_modules/.bin/mocha -w --recursive -R mocha-unfunk-reporter",
+    "test": "NODE_ENV=test node_modules/.bin/mocha --recursive -R mocha-unfunk-reporter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opentable/ot-superagent-promise.git"
+  },
+  "keywords": [
+    "SuperAgent",
+    "Promises",
+    "Promise",
+    "header",
+    "ot-headers",
+    "Opentable"
+  ],
+  "author": "Doron Segal <dsegal@opentable.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/opentable/ot-superagent-promise/issues"
+  },
+  "homepage": "https://github.com/opentable/ot-superagent-promise#readme",
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "interfake": "^1.17.0",
+    "mocha": "^2.3.3",
+    "mocha-unfunk-reporter": "^0.4.0",
+    "sinon": "^1.17.2"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "lodash": "^3.10.1",
+    "superagent": "^1.4.0"
+  }
+}
