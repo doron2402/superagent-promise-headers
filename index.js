@@ -51,7 +51,7 @@ module.exports = function(options) {
 
   function httpCall(action) {
     return function(url, data){
-      var headers = {};
+      var headers = HEADERS;
       if (action.toLowerCase() === 'get') {
         //GET
         headers = _.assign(HEADERS, GET_HEADERS);
@@ -61,7 +61,7 @@ module.exports = function(options) {
       } else if  ('del'.indexOf(action.toLowerCase()) !== -1) {
         //DELETE
         headers = _.assign(HEADERS, DELETE_HEADERS);
-      } else {
+      } else if (action.toLowerCase() === 'put') {
         //PUT
         headers = _.assign(HEADERS, PUT_HEADERS);
       }
