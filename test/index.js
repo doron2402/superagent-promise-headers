@@ -8,7 +8,7 @@ var interfake = new Interfake();
 var BASE_HEADER = {'service-type': 'Doron-Service'};
 var GET_HEADER = { 'type': 'get-test-header' };
 var POST_HEADER = { 'type': 'post-test-header' };
-var request = require('../')({
+var request = require('../')(Promise, {
 	headers: {
 		base: BASE_HEADER,
 		get: GET_HEADER,

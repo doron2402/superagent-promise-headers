@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/doron2402/superagent-promise-headers#readme",
   "devDependencies": {
+    "bluebird": "^2.10.2",
     "chai": "^3.4.0",
     "interfake": "^1.17.0",
     "mocha": "^2.3.3",
@@ -33,7 +34,6 @@
     "sinon": "^1.17.2"
   },
   "dependencies": {
-    "bluebird": "^2.10.2",
     "lodash": "^3.10.1",
     "superagent": "^1.4.0"
   }

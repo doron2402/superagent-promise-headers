@@ -1,6 +1,5 @@
-module.exports = function(options) {
+module.exports = function(Promise, options) {
 
-  var Promise = require("bluebird");
   var superagent = require("superagent");
   var _ = require('lodash');
   var Request = superagent.Request;
@@ -38,11 +37,6 @@ module.exports = function(options) {
           }
         });
       })
-      .cancellable()
-      .caught(Promise.CancellationError, function(err) {
-        req.abort();
-        throw err;
-      });
   };
   Request.prototype.then = function() {
     var promise = this.promise();
