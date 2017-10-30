@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "lodash": "^3.10.1",
-    "superagent": "^1.4.0"
+    "superagent": "^3.7.0"
   }
 }
