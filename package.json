@@ -34,7 +34,7 @@
     "sinon": "^1.17.2"
   },
   "dependencies": {
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.5",
     "superagent": "^1.4.0"
   }
 }
