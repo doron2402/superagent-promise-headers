@@ -2,6 +2,8 @@ superagent-promise-headers
 ====================================
 SuperAgent Bluebird promises - header extension
 
+## Node Version 6.9.x
+
 ## What
 	- Adding headers to HTTP request.
 	- Converting superagent to `Bluebird` promise.
